@@ -5,12 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.akornatskyy</groupId>
-  <artifactId>rate-limiter</artifactId>
+  <artifactId>rate-limiter-lettuce</artifactId>
   <version>1.0-SNAPSHOT</version>
-
-  <name>rate-limiter</name>
-  <description>Limit the rate of incoming requests.</description>
-  <url>https://github.com/akornatskyy/rate-limiter-java</url>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -19,6 +15,17 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>io.github.akornatskyy</groupId>
+      <artifactId>rate-limiter</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>io.lettuce</groupId>
+      <artifactId>lettuce-core</artifactId>
+      <version>6.1.8.RELEASE</version>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>

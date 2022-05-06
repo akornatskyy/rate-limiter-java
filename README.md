@@ -33,23 +33,14 @@ if (!limit.hasRemaining()) {
 // all good
 ```
 
-Asynchronous rate in memory limiter [example](./rate-limiter-example-simple/src/main/java/ratelimiter/example/MyAsyncHandler.java).
+More examples:
 
-```java
-RateAsyncLimiter limiter = new RateInMemoryAsyncLimiter(options);
-
-// somewhere later in your code
-return limiter.addAndGet("key", 1).thenApply(limit -> {
-  if (!limit.hasRemaining()) {
-    // not good
-    return;
-  }
-
-  // all good
-});
-```
-
-Webflux [example](./rate-limiter-example-webflux/src/main/java/ratelimiter/example/WelcomeController.java).
+- [in memory sync](./rate-limiter-example-simple/src/main/java/ratelimiter/example/MyHandler.java)
+- [in memory async](./rate-limiter-example-simple/src/main/java/ratelimiter/example/MyAsyncHandler.java)
+- [in memory webflux](./rate-limiter-example-webflux/src/main/java/ratelimiter/example/WelcomeController.java)
+- [lettuce sync](./rate-limiter-lettuce-example-simple/src/main/java/ratelimiter/lettuce/example/MyHandler.java)
+- [lettuce async](./rate-limiter-lettuce-example-simple/src/main/java/ratelimiter/lettuce/example/MyAsyncHandler.java)
+- [lettuce webflux](./rate-limiter-lettuce-example-webflux/src/main/java/ratelimiter/lettuce/example/WelcomeController.java)
 
 ## Install
 
@@ -59,6 +50,16 @@ Add as a maven dependency:
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+when used with [redis](https://redis.io/) [lettuce](https://github.com/lettuce-io/lettuce-core):
+
+```xml
+<dependency>
+  <groupId>com.github.akornatskyy</groupId>
+  <artifactId>rate-limiter-lettuce</artifactId>
   <version>1.0.0</version>
 </dependency>
 ```
@@ -92,5 +93,8 @@ or use a snapshot from Sonatype:
 
 ```sh
 mvn versions:set -pl rate-limiter -DnewVersion=1.0.0
-mvn -am -pl rate-limiter -P release clean deploy
+mvn -pl rate-limiter -P release clean deploy
+
+mvn versions:set -pl rate-limiter-lettuce -DnewVersion=1.0.0
+mvn -pl rate-limiter-lettuce -P release clean deploy
 ```

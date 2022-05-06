@@ -13,5 +13,8 @@
     <module>rate-limiter</module>
     <module>rate-limiter-example-simple</module>
     <module>rate-limiter-example-webflux</module>
+    <module>rate-limiter-lettuce</module>
+    <module>rate-limiter-lettuce-example-simple</module>
+    <module>rate-limiter-lettuce-example-webflux</module>
   </modules>
 </project>
