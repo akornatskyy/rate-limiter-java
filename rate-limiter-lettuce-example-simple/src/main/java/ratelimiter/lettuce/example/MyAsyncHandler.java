@@ -2,16 +2,15 @@ package ratelimiter.lettuce.example;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
-import ratelimiter.RateAsyncLimiter;
-import ratelimiter.RateLimiterOptions;
-import ratelimiter.lettuce.RateLettuceAsyncLimiter;
-
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import ratelimiter.RateAsyncLimiter;
+import ratelimiter.RateLimiterOptions;
+import ratelimiter.lettuce.RateLettuceAsyncLimiter;
 
-public class MyAsyncHandler {
+class MyAsyncHandler {
   private final RateLimiterOptions options = RateLimiterOptions.builder()
       .max(5)
       .duration(Duration.ofSeconds(10))

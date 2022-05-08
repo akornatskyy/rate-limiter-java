@@ -3,18 +3,17 @@ package ratelimiter.lettuce;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.api.sync.RedisCommands;
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiter;
 import ratelimiter.RateLimiterOptions;
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Optional;
 
 public class RateLettuceLimiterTest {
   private static final String KEY = "rate-lettuce-limiter-test";

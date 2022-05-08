@@ -1,13 +1,12 @@
 package ratelimiter.inmemory;
 
+import java.time.Duration;
+import java.util.concurrent.ExecutionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ratelimiter.RateAsyncLimiter;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiterOptions;
-
-import java.time.Duration;
-import java.util.concurrent.ExecutionException;
 
 public class RateInMemoryAsyncLimiterTest {
   private static final String KEY = "key";

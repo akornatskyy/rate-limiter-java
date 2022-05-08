@@ -1,15 +1,14 @@
 package ratelimiter.inmemory;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Arrays;
+import java.util.Iterator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiter;
 import ratelimiter.RateLimiterOptions;
-
-import java.time.Duration;
-import java.time.Instant;
-import java.util.Arrays;
-import java.util.Iterator;
 
 public class RateInMemoryLimiterTest {
   private static final String KEY = "key";

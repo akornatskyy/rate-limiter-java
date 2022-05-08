@@ -2,20 +2,16 @@ package ratelimiter.lettuce;
 
 import io.lettuce.core.ScriptOutputType;
 import io.lettuce.core.api.async.RedisAsyncCommands;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 import ratelimiter.RateAsyncLimiter;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiterOptions;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.security.MessageDigest;
-import java.util.List;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-
+/**
+ * The type Rate lettuce async limiter.
+ */
 public class RateLettuceAsyncLimiter implements RateAsyncLimiter {
   private final RedisAsyncCommands<String, String> commands;
   private final long duration;
@@ -25,12 +21,25 @@ public class RateLettuceAsyncLimiter implements RateAsyncLimiter {
 
   private volatile String script;
 
+  /**
+   * Instantiates a new Rate lettuce async limiter.
+   *
+   * @param commands the commands
+   * @param options  the options
+   */
   public RateLettuceAsyncLimiter(
       RedisAsyncCommands<String, String> commands,
       RateLimiterOptions options) {
     this(commands, System::currentTimeMillis, options);
   }
 
+  /**
+   * Instantiates a new Rate lettuce async limiter.
+   *
+   * @param commands     the commands
+   * @param timeSupplier the time supplier
+   * @param options      the options
+   */
   public RateLettuceAsyncLimiter(
       RedisAsyncCommands<String, String> commands,
       Supplier<Long> timeSupplier,

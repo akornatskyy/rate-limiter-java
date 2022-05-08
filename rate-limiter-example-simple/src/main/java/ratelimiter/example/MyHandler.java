@@ -1,13 +1,12 @@
 package ratelimiter.example;
 
+import java.time.Duration;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiter;
 import ratelimiter.RateLimiterOptions;
 import ratelimiter.inmemory.RateInMemoryLimiter;
 
-import java.time.Duration;
-
-public class MyHandler {
+class MyHandler {
   private final RateLimiterOptions options = RateLimiterOptions.builder()
       .max(5)
       .duration(Duration.ofSeconds(10))

@@ -1,14 +1,13 @@
 package ratelimiter.example;
 
+import java.time.Duration;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 import ratelimiter.RateAsyncLimiter;
 import ratelimiter.RateLimiterOptions;
 import ratelimiter.inmemory.RateInMemoryAsyncLimiter;
 
-import java.time.Duration;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-
-public class MyAsyncHandler {
+class MyAsyncHandler {
   private final RateLimiterOptions options = RateLimiterOptions.builder()
       .max(5)
       .duration(Duration.ofSeconds(10))

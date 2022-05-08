@@ -2,15 +2,14 @@ package ratelimiter.lettuce.example;
 
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
+import java.time.Duration;
+import java.util.Optional;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiter;
 import ratelimiter.RateLimiterOptions;
 import ratelimiter.lettuce.RateLettuceLimiter;
 
-import java.time.Duration;
-import java.util.Optional;
-
-public class MyHandler {
+class MyHandler {
   private final RateLimiterOptions options = RateLimiterOptions.builder()
       .max(5)
       .duration(Duration.ofSeconds(10))

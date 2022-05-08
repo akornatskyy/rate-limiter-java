@@ -1,13 +1,15 @@
 package ratelimiter.inmemory;
 
+import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 import ratelimiter.RateAsyncLimiter;
 import ratelimiter.RateLimit;
 import ratelimiter.RateLimiter;
 import ratelimiter.RateLimiterOptions;
 
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Supplier;
-
+/**
+ * The type Rate in memory async limiter.
+ */
 public final class RateInMemoryAsyncLimiter implements RateAsyncLimiter {
   private final RateLimiter inner;
 

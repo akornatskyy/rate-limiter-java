@@ -1,5 +1,8 @@
 package ratelimiter;
 
+/**
+ * The type Rate limit.
+ */
 public final class RateLimit {
   private final long remaining;
   private final long reset;

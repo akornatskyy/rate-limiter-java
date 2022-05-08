@@ -1,5 +1,7 @@
 package ratelimiter.example;
 
+import java.time.Duration;
+import java.util.concurrent.CompletableFuture;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,11 +15,8 @@ import ratelimiter.RateLimit;
 import ratelimiter.RateLimiterOptions;
 import ratelimiter.inmemory.RateInMemoryAsyncLimiter;
 
-import java.time.Duration;
-import java.util.concurrent.CompletableFuture;
-
 @RestController
-public class WelcomeController {
+class WelcomeController {
   private final RateLimiterOptions options = RateLimiterOptions.builder()
       .max(5)
       .duration(Duration.ofSeconds(10))
@@ -46,8 +45,8 @@ public class WelcomeController {
   private CompletableFuture<ResponseEntity<?>> tooManyRequests(
       RateLimit limit) {
     MessageResponse response = new MessageResponse();
-    response.message = "API rate limit exceeded. " +
-                       "Retry your request again later, please.";
+    response.message = "API rate limit exceeded. "
+                       + "Retry your request again later, please.";
     return CompletableFuture.completedFuture(
         ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS)
             .headers(headers(limit))
