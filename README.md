@@ -1,5 +1,6 @@
 # rate-limiter-java
 
+[![tests](https://github.com/akornatskyy/rate-limiter-java/actions/workflows/tests.yaml/badge.svg)](https://github.com/akornatskyy/rate-limiter-java/actions/workflows/tests.yaml)
 [![maven central](https://img.shields.io/maven-central/v/io.github.akornatskyy/rate-limiter.svg)](https://search.maven.org/search?q=g:%22io.github.akornatskyy%22%20AND%20a:%22rate-limiter%22)
 
 Limit the rate of incoming requests.
