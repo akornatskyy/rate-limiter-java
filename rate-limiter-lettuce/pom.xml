@@ -6,7 +6,11 @@
 
   <groupId>io.github.akornatskyy</groupId>
   <artifactId>rate-limiter-lettuce</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
+
+  <name>rate-limiter-lettuce</name>
+  <description>Limit the rate of incoming requests using lettuce redis.</description>
+  <url>https://github.com/akornatskyy/rate-limiter-java</url>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
@@ -18,7 +22,7 @@
     <dependency>
       <groupId>io.github.akornatskyy</groupId>
       <artifactId>rate-limiter</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>io.lettuce</groupId>
@@ -124,7 +128,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.1</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>

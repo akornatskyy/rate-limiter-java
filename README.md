@@ -51,7 +51,7 @@ Add as a maven dependency:
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -61,41 +61,16 @@ when used with [redis](https://redis.io/) [lettuce](https://github.com/lettuce-i
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter-lettuce</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
-```
-
-or use a snapshot from Sonatype:
-
-```xml
-<dependency>
-  <groupId>io.github.akornatskyy</groupId>
-  <artifactId>rate-limiter</artifactId>
-  <version>1.0-SNAPSHOT</version>
-</dependency>
-```
-
-```xml
-<repositories>
-  <repository>
-    <id>snapshots</id>
-    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    <releases>
-      <enabled>false</enabled>
-    </releases>
-    <snapshots>
-      <enabled>true</enabled>
-    </snapshots>
-  </repository>
-</repositories>
 ```
 
 ## Release
 
 ```sh
-mvn versions:set -pl rate-limiter -DnewVersion=1.0.0
+mvn versions:set -pl rate-limiter -DnewVersion=1.X.0
 mvn -pl rate-limiter -P release clean deploy
 
-mvn versions:set -pl rate-limiter-lettuce -DnewVersion=1.0.0
+mvn versions:set -pl rate-limiter-lettuce -DnewVersion=1.X.0
 mvn -pl rate-limiter-lettuce -P release clean deploy
 ```
