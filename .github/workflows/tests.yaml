@@ -29,6 +29,6 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.jdk }}
-          distribution: adopt
+          distribution: temurin
           cache: maven
       - run: mvn -T1C --batch-mode verify
