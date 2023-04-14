@@ -51,7 +51,7 @@ Add as a maven dependency:
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter</artifactId>
-  <version>1.1.2</version>
+  <version>1.1.4</version>
 </dependency>
 ```
 
@@ -61,16 +61,16 @@ when used with [redis](https://redis.io/) [lettuce](https://github.com/lettuce-i
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter-lettuce</artifactId>
-  <version>1.1.2</version>
+  <version>1.1.5</version>
 </dependency>
 ```
 
 ## Release
 
 ```sh
-mvn versions:set -pl rate-limiter -DnewVersion=1.X.0
+mvn versions:set -pl rate-limiter -DnewVersion=1.1.X
 mvn -pl rate-limiter -P release clean deploy
 
-mvn versions:set -pl rate-limiter-lettuce -DnewVersion=1.X.0
+mvn versions:set -pl rate-limiter-lettuce -DnewVersion=1.1.X
 mvn -pl rate-limiter-lettuce -P release clean deploy
 ```
