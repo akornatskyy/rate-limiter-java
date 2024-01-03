@@ -61,7 +61,7 @@ when used with [redis](https://redis.io/) [lettuce](https://github.com/lettuce-i
 <dependency>
   <groupId>com.github.akornatskyy</groupId>
   <artifactId>rate-limiter-lettuce</artifactId>
-  <version>1.1.7</version>
+  <version>1.1.8</version>
 </dependency>
 ```
 
